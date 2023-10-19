@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 21991153}
   - component: {fileID: 21991152}
   - component: {fileID: 21991151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust_strength: 1
   turn_strength: 1
+  laserPrefab: {fileID: -64483761847764495, guid: e5315b42abfd5a442b75b61251660bf8, type: 3}
 --- !u!212 &21991154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -422,7 +423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 661600440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

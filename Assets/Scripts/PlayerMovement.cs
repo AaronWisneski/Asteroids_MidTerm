@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private float turn_direction;  
     public float turn_strength = 1.0f;
     private Rigidbody2D reggie;
+
+
+    public laser laserPrefab;
+
+
     //Functions *******************************************
 
     private void Awake()
@@ -35,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
         {
             turn_direction = 0.0f;
         }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            shoot();
+        }
     }
     private void FixedUpdate()
     {
@@ -47,4 +57,10 @@ public class PlayerMovement : MonoBehaviour
             reggie.AddTorque(turn_direction * this.turn_strength);
         }
     }
+    private void shoot()
+    {
+        laser bullet = Instantiate(this.laserPrefab, this.transform.position, this.transform.rotation);
+        bullet.Project(this.transform.up);
+    }
+
 }
