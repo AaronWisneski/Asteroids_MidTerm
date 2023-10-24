@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
             this.gameObject.SetActive(false);
 
-            
+            FindObjectOfType<GameManager>().PlayerDied();
 
         }
 

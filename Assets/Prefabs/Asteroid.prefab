@@ -146,7 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6102524dcd1304fbd110847056b663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 82b589f32f7d40b4892e6adbb36d6e72, type: 3}
+  - {fileID: 21300000, guid: d6ab3825977bf76438edb1e22a353c62, type: 3}
+  - {fileID: 21300000, guid: 02d1445a62c21f04b86da3b44db4d76b, type: 3}
   size: 1
   minSize: 0.5
   maxSize: 1.5
