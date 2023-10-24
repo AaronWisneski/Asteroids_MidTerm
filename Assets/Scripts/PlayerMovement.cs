@@ -63,4 +63,20 @@ public class PlayerMovement : MonoBehaviour
         bullet.Project(this.transform.up);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Asteroid")
+        {
+            reggie.velocity = Vector3.zero;
+            reggie.angularVelocity = 0.0f;
+
+            this.gameObject.SetActive(false);
+
+            
+
+        }
+
+
+    }
+
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour
@@ -33,4 +34,30 @@ public class Asteroid : MonoBehaviour
         reg.AddForce(direction * this.speed );
         Destroy(this.gameObject, this.maxLife);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Laser")
+        {
+            if(this.size * 0.5 >= this.minSize)
+            {
+                CreateSplit();
+                CreateSplit();
+            }
+            Destroy(this.gameObject);
+        }
+            
+            
+    }
+    private void CreateSplit()
+    {
+        Vector2 position = this.transform.position;
+        position += Random.insideUnitCircle * 0.5f;
+
+        Asteroid half = Instantiate(this, position, this.transform.rotation);
+        half.size = this.size * 0.5f;
+        half.SetTrajectory(Random.insideUnitCircle.normalized * this.speed);
+
+    }
 }
+
