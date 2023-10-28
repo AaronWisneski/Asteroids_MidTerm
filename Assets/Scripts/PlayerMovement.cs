@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public laser laserPrefab;
+    public laser stakePrefab;
 
 
     //Functions *******************************************
@@ -45,6 +46,10 @@ public class PlayerMovement : MonoBehaviour
         {
             shoot();
         }
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            shootstake();
+        }
     }
     private void FixedUpdate()
     {
@@ -60,6 +65,11 @@ public class PlayerMovement : MonoBehaviour
     private void shoot()
     {
         laser bullet = Instantiate(this.laserPrefab, this.transform.position, this.transform.rotation);
+        bullet.Project(this.transform.up);
+    }
+    private void shootstake()
+    {
+        laser bullet = Instantiate(this.stakePrefab, this.transform.position, this.transform.rotation);
         bullet.Project(this.transform.up);
     }
 

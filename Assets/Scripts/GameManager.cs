@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
     public float InvulTime = 3.0f;
     public ParticleSystem explosion;
     public int score = 0;
-
+    public TextMeshProUGUI scoredisplay;
 
     public void AsteroidDestroyed(Asteroid asteroid)
     {
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
         this.explosion.Play();
 
         score++;
+        scoredisplay.text = score.ToString();
     }
     public void PlayerDied()
     {
