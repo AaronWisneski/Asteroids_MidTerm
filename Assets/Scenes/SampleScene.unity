@@ -485,6 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 296833987}
   - component: {fileID: 296833988}
+  - component: {fileID: 296833989}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -520,6 +521,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: -4165201536382474689, guid: 4a296f75e9eaf234ea6f2c222520a843, type: 3}
+  spawnRate: 2
+  spawnAmount: 1
+  spawnDistance: 15
+  trajectoryVariance: 15
+--- !u!114 &296833989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296833986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e3af95dc3c8b4418f395668cf6bddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vampirePrefab: {fileID: 2198928073879337112, guid: bfcd552cd8db180488c5520aaeeb4202, type: 3}
+  player: {fileID: 21991153}
   spawnRate: 2
   spawnAmount: 1
   spawnDistance: 15

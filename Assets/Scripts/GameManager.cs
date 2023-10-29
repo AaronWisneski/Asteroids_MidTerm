@@ -22,6 +22,14 @@ public class GameManager : MonoBehaviour
         score++;
         scoredisplay.text = score.ToString();
     }
+    public void VampireDestroyed(Vampire vampire)
+    {
+        this.explosion.transform.position = vampire.transform.position;
+        this.explosion.Play();
+
+        score=score+2;
+        scoredisplay.text = score.ToString();
+    }
     public void PlayerDied()
     {
         this.explosion.transform.position = this.player.transform.position;

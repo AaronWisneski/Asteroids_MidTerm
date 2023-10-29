@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Asteroid")
+        if(collision.gameObject.tag == "Asteroid" || collision.gameObject.tag == "Vampire")
         {
             reggie.velocity = Vector3.zero;
             reggie.angularVelocity = 0.0f;
