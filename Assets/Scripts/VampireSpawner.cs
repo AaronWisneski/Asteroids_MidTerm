@@ -23,23 +23,20 @@ public class VampireSpawner : MonoBehaviour
         for (int i = 0; i < spawnAmount; i++)
         {
             Vector3 spawnDirection = Random.insideUnitCircle.normalized * this.spawnDistance;
-            Vector3 spawnPoint = this.transform.position + spawnDirection;
+            Vector3 spawnPoint = player.transform.position + spawnDirection;
             
             float variance = Random.Range(-trajectoryVariance, trajectoryVariance);
             Quaternion rotation = Quaternion.AngleAxis(variance, Vector3.forward);
 
             Vampire vampire = Instantiate(this.vampirePrefab, spawnPoint, rotation);
             // vampire.SetTrajectory(rotation * -spawnDirection); //randome trajectory
-            ////not random trajectory
-            //Vector2 distance = this.player.transform.position - this.vampirePrefab.transform.position;
-            //float angle = Mathf.Atan2(distance.y, distance.x);
-            //angle = Mathf.Rad2Deg;
-            //Quaternion direction = Quaternion.AngleAxis(angle,Vector3.forward);
-            //vampire.SetTrajectory(direction *-spawnDirection);
-          
-            
-                vampire.Move(vampire.transform);
-            
+            //not random trajectory
+            // vampire.SetTrajectory(direction * -spawnDirection);
+            Quaternion angle = Quaternion.RotateTowards(vampire.transform.rotation, this.player.transform.rotation, 0);
+            vampire.SetTrajectory(-spawnDirection);
+
+            // vampire.Move(vampire.transform);
+
         }
     }
 }

@@ -30,13 +30,13 @@ public class Vampire : MonoBehaviour
         reg.mass = this.size;
     }
 
-    //public void SetTrajectory(Vector2 direction)
-    //{
-    //    reg.AddForce(direction * this.speed);
-    //    Destroy(this.gameObject, this.maxLife);
+    public void SetTrajectory(Vector2 direction)
+    {
+        reg.AddForce(direction * this.speed);
+        Destroy(this.gameObject, this.maxLife);
 
-        
-    //}
+
+    }
     public void Move(Transform vampire)
     {
             vampire.transform.position = Vector3.MoveTowards(vampire.transform.position, player.transform.position, distance);
