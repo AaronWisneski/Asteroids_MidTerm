@@ -13,20 +13,22 @@ public class Asteroid : MonoBehaviour
     public float maxLife = 30.0f;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D reg;
+    public BoxCollider2D col;
 
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         reg = GetComponent<Rigidbody2D>();
+       // col = GetComponent<BoxCollider2D>();
     }
     void Start()
     {
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
         this.transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
         this.transform.localScale = Vector3.one * this.size;
-
         reg.mass = this.size;
+        col.size =  1.25f * this.size * Vector3.one;
     }
 
     public void SetTrajectory(Vector2 direction) 

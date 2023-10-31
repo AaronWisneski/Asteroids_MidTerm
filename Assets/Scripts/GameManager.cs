@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public ParticleSystem explosion;
     public int score = 0;
     public TextMeshProUGUI scoredisplay;
+    public TextMeshProUGUI livedisplay;
 
     public void AsteroidDestroyed(Asteroid asteroid)
     {
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         this.explosion.transform.position = this.player.transform.position;
         this.explosion.Play();
         this.lives--;
+        livedisplay.text = lives.ToString();
 
         if (this.lives <= 0)
         {

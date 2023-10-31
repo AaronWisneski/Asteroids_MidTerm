@@ -42,11 +42,11 @@ public class PlayerMovement : MonoBehaviour
             turn_direction = 0.0f;
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             shoot();
         }
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(KeyCode.C) || Input.GetMouseButtonDown(1))
         {
             shootstake();
         }

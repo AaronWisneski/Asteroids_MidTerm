@@ -150,8 +150,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 82b589f32f7d40b4892e6adbb36d6e72, type: 3}
   - {fileID: 21300000, guid: d6ab3825977bf76438edb1e22a353c62, type: 3}
   - {fileID: 21300000, guid: 02d1445a62c21f04b86da3b44db4d76b, type: 3}
+  - {fileID: 21300000, guid: d5a84c1040cf2e6419fa027a003470b7, type: 3}
+  - {fileID: 21300000, guid: ce89f6cd25de19e42b6278c87a7b3675, type: 3}
   size: 1
   minSize: 0.5
   maxSize: 1.5
   speed: 10
   maxLife: 30
+  col: {fileID: 2357131375692277243}
